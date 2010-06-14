@@ -22,10 +22,12 @@ int main(void)
      print_start_message();
      
      /*************************************************************************/
-     int n = 10;
-     dbcomplex a(1.0,1.0);
-     j0(10.0);
-//      cout << a << endl;
+//      int n = 10;
+     dcomplex a(1.0,3.0);
+     
+     cout << spherical_j0(a) << endl;
+     cout << spherical_j1(a) << endl;
+     cout << spherical_j2(a) << endl;
      
      /************* Ligne d'étoiles *******************************************/
      print_stars();
