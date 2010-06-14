@@ -33,16 +33,15 @@ int main(int argc, char *argv[])
      
      /************* Variable radiale ******************************************/
      const int n = 1000;
-     const double rmin = 0.0;
-     double rmax = 0.0;
-     rmax = 10.0;
+     double rmax = 10.0;
      if(k*zo <= 100) rmax = 6.0;
      if(k*zo <= 70) rmax = 4.0;
      if(k*zo <= 30) rmax = 3.0;
      if(k*zo <= 10) rmax = 2.0;
+     const double rmin = -rmax;
      double dr = (rmax - rmin)/(n-1);
      double r[n];
-     r[0] = 0.0;
+     r[0] = rmin;
      for(int i = 1; i<n; i++) r[i] = r[i-1] + dr;
      
      /************* Variables complexes ***************************************/
@@ -83,9 +82,9 @@ int main(int argc, char *argv[])
      fclose(file);
      
      /************* Sortie à l'écran ******************************************/
-     printf("\n");
      printf("k*zo = %f\n",zo*k);
      printf("wo = %f lambda\n",wo);
+     printf("Sortie écrite dans %s\n",nom);
      printf("\n");
      
      /************* Ligne d'étoiles *******************************************/
