@@ -1,4 +1,11 @@
+#include <cmath>
+#include <complex> 
 #include <cstdio>
+#include <iostream>
+using namespace std;
+typedef complex<double> dbcomplex;
+
+// Bessel complexe : http://pagesperso-orange.fr/jean-pierre.moreau/c_bessel.html
 
 /******************************************************************************/
 /****************** Fonctions locales (prototypes) ****************************/
@@ -9,9 +16,18 @@ void print_start_message();
 /******************************************************************************/
 /****************** Main ******************************************************/
 /******************************************************************************/
-int main()
-{
+int main(void)
+{    
+     /************* Message de départ *****************************************/
      print_start_message();
+     
+     /*************************************************************************/
+     int n = 10;
+     dbcomplex a(1.0,1.0);
+     j0(10.0);
+//      cout << a << endl;
+     
+     /************* Ligne d'étoiles *******************************************/
      print_stars();
      printf("\n");
 }
