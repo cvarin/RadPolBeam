@@ -18,7 +18,7 @@ tsize = 16
 # A.April, Opt. Lett. 331563 (2008)
 lambda0 = 0.8e-6
 k = 2.0*pi/lambda0
-a = 350.0/k
+a = 278.581/k
 wo = (sqrt(2.0)/k)*sqrt(sqrt(1.0+(k*a)**2)-1.0);
 
 print
@@ -26,6 +26,7 @@ print "*******************"
 print "lambda0    = " + str(lambda0)
 print "ka         = " + str(k*a)
 print "wo/lambda0 = " + str(wo/lambda0)
+print "wo         = " + str(wo)
 print "*******************"
 print
 
