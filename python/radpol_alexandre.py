@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/python
 # -*- coding: utf-8 -*-
 
 ######### Modules #########################################
@@ -18,7 +18,8 @@ tsize = 16
 # A.April, Opt. Lett. 331563 (2008)
 lambda0 = 0.8e-6
 k = 2.0*pi/lambda0
-a = 278.581/k
+#a = 278.581/k
+a = 350.0/k
 wo = (sqrt(2.0)/k)*sqrt(sqrt(1.0+(k*a)**2)-1.0);
 
 print
@@ -99,12 +100,14 @@ Ez *= K00
 ###########################################################
 # Tracé des composantes
 fig1 = figure(figsize=(16.0,8.5))
-fig1.canvas.set_window_title(unicode("Distribution du champ électrique (non-paraxial)"))
-plot(r/lambda0,real(Er)/real(Er).max(),label="Er")
-plot(r/lambda0,real(-1j*Ez)/real(-1j*Ez).max(),label="Ez")
+fig1.canvas.set_window_title(unicode("Distribution du champ électrique (non-paraxial)","utf-8"))
+plot(r/lambda0,real(Er),label="Er")
+plot(r/lambda0,real(-1j*Ez),label="Ez")
+#plot(r/lambda0,real(Er)/real(Er).max(),label="Er")
+#plot(r/lambda0,real(-1j*Ez)/real(-1j*Ez).max(),label="Ez")
 xlabel(r"$r/\lambda$",size=tsize)
-ylabel(unicode("Champ électrique normalisé"),size=tsize)
-ylim(-0.2,1.0001)
+ylabel(unicode("Champ électrique normalisé","utf-8"),size=tsize)
+#ylim(-0.2,1.0001)
 xlim(0,lim/lambda0)
 grid(True)
 legend(loc="best")
@@ -118,7 +121,7 @@ wphi = 0.25*mu0*abs(Hphi)**2
 ###########################################################
 # Figure
 fig2 = figure(figsize=(16.0,8.5))
-fig2.canvas.set_window_title(unicode("Densité d'énergie électrique (non-paraxial)"))
+fig2.canvas.set_window_title(unicode("Densité d'énergie électrique (non-paraxial)","utf-8"))
 maxi = max(wr + wz)
 rscl = sqrt(R**2 - (z + a*1j)**2)/lambda0
 title(r"$w_0 = %f \lambda_0,\quad ka = %f$" %(wo/lambda0,k*a),size = tsize)
@@ -127,7 +130,7 @@ plot(rscl,wz/maxi,label=r"$|E_z|^2$")
 plot(rscl,(wr+wz)/maxi,label=r"$|E_r|^2 + |E_z|^2$")
 #plot(rscl,wphi/maxi,label=r"$|H_\phi|^2$")
 xlabel(r"$r/\lambda$",size=tsize)
-ylabel(unicode("Champ au carré"),size=tsize)
+ylabel(unicode("Champ au carré","utf-8"),size=tsize)
 ylim(0,1)
 xlim(0,lim/lambda0)
 grid(True)
